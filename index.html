@@ -1,3 +1,9 @@
+<!--
+  Author: Abdul Faheem A
+  Copyrights: Gahranox Carvel Labs Technologies
+  Purpose: Main entry HTML document for the Raseed application.
+  Usecase: Serves as the shell for the Angular application, providing the root mount point and essential metadata.
+-->
 <!doctype html>
 <html lang="en" data-beasties-container>
 
@@ -7,19 +13,84 @@
   <base href="./">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="raseedlogoHeader.png">
-<link rel="stylesheet" href="styles-5INURTSO.css">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CN08BKVHVM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-CN08BKVHVM');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CN08BKVHVM"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-CN08BKVHVM');
+  </script>
+  <style>
+    /* Premium Loading Screen Styles */
+    .loader-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #f8fafc;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    .emoji-spinner {
+      display: flex;
+      gap: 20px;
+      font-size: 3rem;
+    }
+
+    .emoji {
+      animation: spin 2s linear infinite;
+    }
+
+    .emoji:nth-child(2) {
+      animation-delay: 0.3s;
+    }
+
+    .emoji:nth-child(3) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(180deg) scale(1.2);
+      }
+
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
+    }
+
+    .loader-text {
+      margin-top: 20px;
+      color: #4f46e5;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+  </style>
+  <link rel="stylesheet" href="styles-5INURTSO.css">
 </head>
 
 <body>
-  <app-root></app-root>
-<link rel="modulepreload" href="chunk-FK6H3RFT.js"><link rel="modulepreload" href="chunk-KAT7YFEL.js"><script src="main-LR3MJVT6.js" type="module"></script></body>
+  <app-root>
+    <div class="loader-container">
+      <div class="emoji-spinner">
+        <span class="emoji">🧾</span>
+        <span class="emoji">🌐</span>
+        <span class="emoji">💰</span>
+      </div>
+      <div class="loader-text">Loading Raseed...</div>
+    </div>
+  </app-root>
+  <link rel="modulepreload" href="chunk-VNTSSGAM.js">
+  <link rel="modulepreload" href="chunk-KAT7YFEL.js">
+  <script src="main-PI6VI45I.js" type="module"></script>
+</body>
 
 </html>
